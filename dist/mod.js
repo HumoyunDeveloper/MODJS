@@ -20,6 +20,7 @@
         console?.log("MODJS-Error: Unexpected Error");
     }
 
+
     function _doOpt() {
         const _checkEl = function (_sel = "") {
             var resArray = [];
@@ -39,11 +40,21 @@
                     if (els.length !== 0) {
                         els.forEach(function (el) {
                             manipulate(_obj[d], el);
+                            if (_obj[d].adv) {
+                                if (_obj[d].adv.ev) {
+                                    if (typeof _obj[d].adv.ev === "function") {
+                                        _obj[d].adv.ev(el);
+                                    } else {
+                                        console["error"]("MODJS-Error: ev is not a \'" + (typeof _obj[d].adv.ev) + "\'");
+                                    }
+                                }
+                            }
                         });
                     } else {
-                        console["error"]("MODJS-Error: \"" + d + "\" element not found.");
+                        console["error"]("MODJS-Error: \"" + d + "\" element(s) not found.");
                     }
                 }
+
             }
         }
 
@@ -51,7 +62,7 @@
             var s;
             for (s in _el) {
                 if (!_saver) {
-                    _saver = _d;
+                    _saver = {};
                 }
                 if (!(_checkType(_el[s], "object"))) {
                     _saver[s] = _el[s];
@@ -62,19 +73,40 @@
             }
         }
 
-        _ob.mod ? _ob.mod : _ob.mod = mod;
+        _ob.$M ? _ob.$M : _ob.$M = mod;
     }
 
 })(window, document);
 
 /*
-    mod({
+    $M({
         ".elementSelector": {
             textContent: "Hello World",
             style: {
                 color: "yellow",
                 background: "green"
+            },
+            onclick: function() {
+                with(this){
+                    innerHTML = "Hello World!!!";
+                    with(style){
+                        color = "black";
+                        fontSize = "30px";
+                        backgroundColor = "black";
+                    }
+                }
+            },
+            adv: {
+                ev: function(element) {
+                    element.click();
+                },
+                init: function() {
+                    // initialize current element...
+                }
             }
+        },
+        "element2, element3, ...": {
+            ...
         }
     })
 */
