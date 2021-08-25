@@ -1,10 +1,8 @@
-# MODJS
+<h1 align="center">ModJS</h1>
 
 ## Table of contents
 
 - [Quick start](#quick-start)
-- [Copyright and license](#copyright-and-license)
-
 
 ## Quick start
 
@@ -18,7 +16,7 @@ With ModJS you can quickly edit, add events, style HTML Elements.
 ## 2. How to install?
 You can clone this repo by running this command below.
 ```
-$ git clone https://github.com/HumoyunDeveloper/DesignJS.git
+$ git clone https://github.com/HumoyunDeveloper/MODJS.git
 ```
 or you can simple download resource files as a zip format, then 
 inside of your html file include simple script tag.
@@ -28,15 +26,57 @@ inside of your html file include simple script tag.
 ```
 
 ## 3. How to use?
-
+Let's change the text and colorize an element:
+```
+$M({
+  "selector": {
+    innerHTML: "Hello World",
+    // textContent: "value"
+    style: {
+      color: "green"
+      /* 
+       backgroundColor: "value",
+       fontWeight: "value"
+       ...
+      */
+    }
+  }
+});
+```
+So yeah, but how can we add events??
+<br>
+Well, it is easy.
+```
+$M({
+  "selector": {
+    // adding events...
+    onclick: function(e) { /* when the element gets clicked */ },
+    onload: function(e) { /* when the element gets loaded */ }
+    ...
+  }
+});
+```
+Automatically invoked functions:
+```
+$M({
+  "selector": {
+    // "adv" means "advanced"
+    adv: {
+      // automatically invokes this function when the element is loaded
+      ev: function(currentElement) {
+        // your code goes here...
+      }
+    }
+  }
+});
+```
 
 So, thats it... I hope this will save someone's time, cheers!
 
-
 ## Bugs and feature requests
 
-Have a bug or a feature request? search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://www.github.com/HumoyunDeveloper/DesignJS/issues/new).
+Have a bug or a feature request? search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/HumoyunDeveloper/MODJS/issues/new).
 
 ## license
-Code released under the [MIT License](https://www.github.com/HumoyunDeveloper/DesignJS/blob/master/LICENSE).
+Code released under the [MIT License](https://github.com/HumoyunDeveloper/MODJS/blob/master/LICENSE).
 
