@@ -1,4 +1,3 @@
-<h1 align="center">ModJS</h1>
 
 ## Quick start
 
