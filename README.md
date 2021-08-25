@@ -1,9 +1,5 @@
 <h1 align="center">ModJS</h1>
 
-## Table of contents
-
-- [Quick start](#quick-start)
-
 ## Quick start
 
 - What is ModJS?
