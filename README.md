@@ -6,7 +6,7 @@
 - How to use?
 
 ## 1. What is ModJS?
-With ModJS you can quickly edit, add events, style HTML Elements. 
+With ModJS you can quickly edit, add events, design HTML Elements. 
 
 ## 2. How to install?
 You can clone this repo by running this command below.
