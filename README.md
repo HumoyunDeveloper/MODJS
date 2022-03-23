@@ -13,7 +13,7 @@ You can clone this repo by running this command below.
 ```
 $ git clone https://github.com/HumoyunDeveloper/MODJS.git
 ```
-or you can simple download resource files as a zip format, then 
+or you can simply download resource files as a zip format, then 
 inside of your html file include simple script tag.
 
 ```
